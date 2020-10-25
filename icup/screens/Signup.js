@@ -28,7 +28,7 @@ class Signup extends Component {
       .auth()
       .createUserWithEmailAndPassword(this.state.username, this.state.password)
       .then((user) => {
-        this.props.navigation.navigate("Dashboard");
+        this.props.navigation.navigate("Profile");
       })
       .catch(function (error) {
         var errorCode = error.code;
@@ -37,7 +37,6 @@ class Signup extends Component {
           alert(errorMessage);
         }
       });
-    this.props.navigation.navigate("Dashboard");
   };
 
   render() {
