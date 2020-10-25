@@ -30,7 +30,7 @@ class Login extends Component {
       .auth()
       .signInWithEmailAndPassword(this.state.username, this.state.password)
       .then((user) => {
-        this.props.navigation.navigate("Dashboard");
+        this.props.navigation.navigate("Profile");
       })
       .catch(function (error) {
         var errorCode = error.code;
