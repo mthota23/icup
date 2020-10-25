@@ -33,3 +33,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+
+{
+  /* <NavigationContainer>
+<Stack.Navigator>
+  <Stack.Screen name="Home" component={Home} />
+  <Stack.Screen name="Login" component={Login} />
+</Stack.Navigator>
+</NavigationContainer> */
+}
