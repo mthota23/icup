@@ -7,6 +7,8 @@ import Dashboard from "./screens/Dashboard";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import Signup from "./screens/Signup";
+import Dashboard from "./screens/Dashboard";
+import Profile from "./screens/Profile";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +21,7 @@ export default class App extends React.Component {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
       </NavigationContainer>
     );
@@ -33,3 +36,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+
+{
+  /* <NavigationContainer>
+<Stack.Navigator>
+  <Stack.Screen name="Home" component={Home} />
+  <Stack.Screen name="Login" component={Login} />
+</Stack.Navigator>
+</NavigationContainer> */
+}
