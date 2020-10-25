@@ -9,34 +9,30 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import fire from "../credentials/Fire";
 
 const { width, height } = Dimensions.get("window");
 
-import fire from "../credentials/Fire";
-
-class Login extends Component {
+class Signup extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       username: "",
       password: "",
-      success: false,
     };
   }
 
   handleSubmit = (e) => {
     fire
       .auth()
-      .signInWithEmailAndPassword(this.state.username, this.state.password)
+      .createUserWithEmailAndPassword(this.state.username, this.state.password)
       .then((user) => {
         this.props.navigation.navigate("Dashboard");
       })
       .catch(function (error) {
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
         if (errorCode) {
           alert(errorMessage);
         }
@@ -68,7 +64,7 @@ class Login extends Component {
             value={this.state.password}
           />
           <TouchableOpacity style={styles.button} onPress={this.handleSubmit}>
-            <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN IN</Text>
+            <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN UP</Text>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
@@ -76,7 +72,7 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Signup;
 
 const styles = StyleSheet.create({
   button: {

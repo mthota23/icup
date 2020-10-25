@@ -27,11 +27,14 @@ class Home extends Component {
           >
             <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN IN</Text>
           </TouchableOpacity>
-          <View style={{ ...styles.button, backgroundColor: "#2E71DC" }}>
+          <TouchableOpacity
+            style={{ ...styles.button, backgroundColor: "#2E71DC" }}
+            onPress={() => this.props.navigation.navigate("Signup")}
+          >
             <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
               SIGN UP
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     );
